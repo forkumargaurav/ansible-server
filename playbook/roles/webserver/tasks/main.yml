@@ -1,0 +1,4 @@
+--- # Main.yml for roles
+- name: install httpd
+  action: yum name=httpd state=latest
+

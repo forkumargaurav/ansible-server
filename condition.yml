@@ -1,0 +1,12 @@
+--- #condition when playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+         - name: install apache on debian os
+           command: apt-get -y install apache2
+           when: ansible_os_family == "Debain"
+         - name: install apache on redhat os
+           command: yum -y install httpd
+           when: ansible_os_family == "RedHat"
